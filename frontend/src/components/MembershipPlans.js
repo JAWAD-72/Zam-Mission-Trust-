@@ -195,7 +195,7 @@ export default function MembershipPlans() {
                   </div>
 
                   <div className="qr-container flex flex-col items-center mb-6 bg-white p-4 rounded-lg">
-                    <QRCodeCanvas value={upiUrl} size={200} />
+                    <QRCodeCanvas value={upiUrl} size={200} bgColor="#ffffff" fgColor="#000000" />
                     <p className="text-black text-xs mt-2 font-mono">{upiId}</p>
                   </div>
 
