@@ -3,8 +3,8 @@ const router = express.Router();
 const Member = require('../models/Member');
 const Contact = require('../models/Contact');
 
-const ADMIN_EMAIL = 'Baqir@gmail.com';
-const ADMIN_PASS = 'Baqir@123';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_PASS = process.env.ADMIN_PASS;
 
 // --- ADMIN ROUTES ---
 

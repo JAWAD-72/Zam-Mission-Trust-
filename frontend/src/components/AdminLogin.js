@@ -79,132 +79,46 @@ export default function AdminLogin() {
 
           <button type="submit" className="btn-login">ADMIN LOGIN</button>
         </form>
-
-        <div className="demo-hint">
-          Demo Admin: Baqir@gmail.com / Baqir@123
-        </div>
       </div>
 
       <style jsx>{`
         .home-btn {
-          position: fixed;
-          top: 20px;
-          right: 24px;
-          display: flex;
-          align-items: center;
-          background: transparent;
-          border: 1px solid #d4af37;
-          color: #d4af37;
-          font-family: 'Cinzel', serif;
-          font-size: 0.75rem;
-          font-weight: 600;
-          letter-spacing: 1px;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-          border-radius: 4px;
-          transition: background 0.2s, color 0.2s;
-          z-index: 100;
+          position: fixed; top: 20px; right: 24px;
+          display: flex; align-items: center;
+          background: transparent; border: 1px solid #d4af37;
+          color: #d4af37; font-family: 'Cinzel', serif;
+          font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
+          padding: 0.5rem 1rem; cursor: pointer;
+          border-radius: 4px; transition: background 0.2s, color 0.2s; z-index: 100;
         }
-        .home-btn:hover {
-          background: #d4af37;
-          color: #000;
-        }
+        .home-btn:hover { background: #d4af37; color: #000; }
         .login-container {
-          min-height: 100vh;
-          background-color: #000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 2rem;
+          min-height: 100vh; background-color: #000;
+          display: flex; align-items: center; justify-content: center; padding: 2rem;
         }
-        .login-box {
-          width: 100%;
-          max-width: 400px;
-          padding: 2rem;
-        //   border: 1px solid #1a1a1a;
-          background: #000;
-          text-align: center;
-        }
+        .login-box { width: 100%; max-width: 400px; padding: 2rem; background: #000; text-align: center; }
         .icon-wrapper {
-          width: 60px;
-          height: 60px;
-          background: rgba(212, 175, 55, 0.1);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto 1.5rem;
+          width: 60px; height: 60px; background: rgba(212,175,55,0.1);
+          border-radius: 50%; display: flex; align-items: center;
+          justify-content: center; margin: 0 auto 1.5rem;
         }
-        .title {
-          color: #d4af37;
-          font-family: 'Cinzel', serif;
-          font-size: 2rem;
-          margin-bottom: 0.5rem;
-          letter-spacing: 1px;
-        }
-        .subtitle {
-          color: #666;
-          font-family: 'Inter', sans-serif;
-          font-size: 0.9rem;
-          margin-bottom: 2.5rem;
-        }
-        .form-group {
-          text-align: left;
-          margin-bottom: 1.5rem;
-        }
-        label {
-          display: block;
-          color: #ccc;
-          font-size: 0.8rem;
-          margin-bottom: 0.5rem;
-          font-family: 'Inter', sans-serif;
-        }
+        .title { color: #d4af37; font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: 1px; }
+        .subtitle { color: #666; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin-bottom: 2.5rem; }
+        .form-group { text-align: left; margin-bottom: 1.5rem; }
+        label { display: block; color: #ccc; font-size: 0.8rem; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
         input {
-          width: 100%;
-          background: #050505;
-          border: 1px solid #333;
-          padding: 0.8rem 1rem;
-          color: #fff;
-          font-family: 'Inter', sans-serif;
-          outline: none;
-          transition: border-color 0.3s;
-          border-radius: 4px;
+          width: 100%; background: #050505; border: 1px solid #333;
+          padding: 0.8rem 1rem; color: #fff; font-family: 'Inter', sans-serif;
+          outline: none; transition: border-color 0.3s; border-radius: 4px;
         }
-        input:focus {
-          border-color: #d4af37;
-        }
+        input:focus { border-color: #d4af37; }
         .btn-login {
-          width: 100%;
-          background: linear-gradient(180deg, #b88a28 0%, #8a6616 100%);
-          border: none;
-          padding: 1rem;
-          color: #fff;
-          font-family: 'Cinzel', serif;
-          font-weight: 600;
-          letter-spacing: 1px;
-          cursor: pointer;
-          margin-top: 1rem;
-          transition: filter 0.3s;
+          width: 100%; background: linear-gradient(180deg, #b88a28 0%, #8a6616 100%);
+          border: none; padding: 1rem; color: #fff; font-family: 'Cinzel', serif;
+          font-weight: 600; letter-spacing: 1px; cursor: pointer; margin-top: 1rem; transition: filter 0.3s;
         }
-        .btn-login:hover {
-          filter: brightness(1.1);
-        }
-        .error-msg {
-          color: #ff4444;
-          font-size: 0.85rem;
-          margin-bottom: 1rem;
-          font-family: 'Inter', sans-serif;
-        }
-        .demo-hint {
-          margin-top: 2rem;
-          padding: 1rem;
-          border: 1px solid #222;
-          border-radius: 4px;
-          color: #555;
-          font-size: 0.8rem;
-          font-family: 'Inter', sans-serif;
-          background: #050505;
-        }
+        .btn-login:hover { filter: brightness(1.1); }
+        .error-msg { color: #ff4444; font-size: 0.85rem; margin-bottom: 1rem; font-family: 'Inter', sans-serif; }
       `}</style>
     </div>
   );
