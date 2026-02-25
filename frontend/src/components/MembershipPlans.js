@@ -40,7 +40,14 @@ export default function MembershipPlans() {
       price: "Variable",
       description: "Give according to your will",
       features: ["One-time contribution", "Choose your own amount", "Support community initiatives", "No auto-debit", "Full membership benefits"]
+    },
+    {
+      name: "AZADARI",
+      price: "Variable",
+      description: "Contribute for Azadari programs",
+      features: ["Support Muharram programs", "Fund Majlis & processions", "Choose your own amount", "No auto-debit", "Special Azadari recognition"]
     }
+
   ];
 
   const handleSelectPlan = (plan) => {
@@ -62,7 +69,7 @@ export default function MembershipPlans() {
       alert("Please fill all details");
       return;
     }
-    if (selectedPlan.name === 'SADQA' && !formData.customAmount) {
+    if ((selectedPlan.name === 'SADQA' || selectedPlan.name === 'AZADARI') && !formData.customAmount) {
       alert("Please enter an amount");
       return;
     }
@@ -82,7 +89,7 @@ export default function MembershipPlans() {
         email: formData.email,
         phone: formData.phone,
         plan: selectedPlan.name,
-        amount: selectedPlan.name === 'SADQA' ? formData.customAmount : selectedPlan.price,
+        amount: (selectedPlan.name === 'SADQA' || selectedPlan.name === 'AZADARI') ? formData.customAmount : selectedPlan.price,
         paymentId: transactionId
       };
 
@@ -194,9 +201,18 @@ export default function MembershipPlans() {
                     </div>
                   </div>
 
-                  <div className="qr-container flex flex-col items-center mb-6 bg-white p-4 rounded-lg">
-                    <QRCodeCanvas value={upiUrl} size={200} bgColor="#ffffff" fgColor="#000000" />
-                    <p className="text-black text-xs mt-2 font-mono">{upiId}</p>
+                  <div style={{
+                    background: '#ffffff',
+                    padding: '20px',
+                    borderRadius: '16px',
+                    display: 'inline-flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                    margin: '0 auto 1.5rem'
+                  }}>
+                    <QRCodeCanvas value={upiUrl} size={210} bgColor="#ffffff" fgColor="#000000" level="H" />
+                    <p style={{ color: '#000', fontSize: '0.75rem', marginTop: '0.6rem', fontFamily: 'monospace' }}>{upiId}</p>
                   </div>
 
                   <p className="text-center text-xs text-gray-500 mb-6">
@@ -230,14 +246,14 @@ export default function MembershipPlans() {
                 <>
                   <h3 className="modal-title">JOIN {selectedPlan.name} PLAN</h3>
                   <p className="modal-subtitle">
-                    {selectedPlan.name === 'SADQA'
+                    {(selectedPlan.name === 'SADQA' || selectedPlan.name === 'AZADARI')
                       ? 'Enter your one-time contribution below'
                       : <>Monthly Contribution: <span className="gold-text">₹{selectedPlan.price}</span></>
                     }
                   </p>
 
                   <form onSubmit={handleProceedToPayment}>
-                    {selectedPlan.name === 'SADQA' && (
+                    {(selectedPlan.name === 'SADQA' || selectedPlan.name === 'AZADARI') && (
                       <div className="form-group">
                         <label>One-time Amount (₹)</label>
                         <input
