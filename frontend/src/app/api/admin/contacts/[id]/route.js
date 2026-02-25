@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import Contact from '@/models/Contact';
 
+export const dynamic = 'force-dynamic';
+
 export async function DELETE(request, { params }) {
     try {
         const { id } = await params;
