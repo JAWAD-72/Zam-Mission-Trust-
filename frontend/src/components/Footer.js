@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="col">
             <h4 className="footer-title">CONTACT INFO</h4>
             <div className="contact-item"><span className="label">Email:</span> <span className="value">zammissioncharitabletrust@gmail.com</span></div>
-            <div className="contact-item"><span className="label">Phone:</span> <span className="value">8779559196</span></div>
+            <div className="contact-item"><span className="label">Phone:</span> <span className="value">8779559196/ 75060 69461</span></div>
             <div className="contact-item"><span className="label">Address:</span> <span className="value">B1-G5, SAHYOG BUILDING, NEAR JILANI PARK, TALO PALI ROAD, KAUSA, MUMBRA, THANE - 400612</span></div>
           </div>
         </div>

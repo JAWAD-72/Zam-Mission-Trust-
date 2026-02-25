@@ -63,9 +63,7 @@ export default function WhyJoinUs() {
             </div>
             <style jsx>{`
         .why-join-section {
-          background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url('/images/shrine1.jpg');
-          background-size: cover;
-          background-position: center;
+          background: #050505;
         }
         .section-heading {
           font-size: clamp(1.8rem, 4vw, 3rem);

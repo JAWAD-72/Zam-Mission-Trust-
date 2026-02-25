@@ -73,7 +73,7 @@ export default function ContactSection() {
               </div>
               <div className="card-content">
                 <h4 className="card-title">PHONE</h4>
-                <p>+91 8779559196</p>
+                <p>+91 8779559196/+91 75060 69461</p>
               </div>
             </div>
 
@@ -151,7 +151,7 @@ export default function ContactSection() {
 
       <style jsx>{`
         .contact-section {
-          background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/images/shrine2.jpg');
+          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/shrine2.jpg');
           background-size: cover;
           background-position: center;
           background-attachment: fixed;

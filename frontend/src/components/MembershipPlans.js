@@ -294,7 +294,7 @@ export default function MembershipPlans() {
 
       <style jsx>{`
         .membership-section { 
-          background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)), url('/images/shrine1.jpg');
+          background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/images/shrine1.jpg');
           background-size: cover;
           background-position: center;
           background-attachment: fixed;

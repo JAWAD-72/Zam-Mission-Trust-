@@ -56,7 +56,7 @@ export default function AboutSection() {
 
       <style jsx>{`
         .about-section {
-          background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/images/shrine2.jpg');
+          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/shrine2.jpg');
           background-size: cover;
           background-position: center;
           background-attachment: fixed;

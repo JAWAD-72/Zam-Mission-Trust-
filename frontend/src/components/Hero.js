@@ -34,7 +34,7 @@ export default function Hero() {
           content: '';
           position: absolute;
           inset: 0;
-          background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.55)), url('/images/shrine1.jpg');
+          background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.55)), url('/images/hussain.jpg');
           background-size: cover;
           background-position: center;
           z-index: 0;

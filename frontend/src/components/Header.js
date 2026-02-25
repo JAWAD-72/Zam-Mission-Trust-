@@ -10,7 +10,7 @@ export default function Header() {
     <header className="header">
       <div className="container flex items-center justify-between">
         <div className="logo">
-          <span className="logo-white">ANJUMAN BAG-E-</span>
+          <span className="logo-white">ANJUMAN BAUG-E-</span>
           <span className="logo-yellow">ZEHRA</span>
         </div>
 
