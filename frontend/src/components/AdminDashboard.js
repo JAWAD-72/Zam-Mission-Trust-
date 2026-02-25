@@ -31,7 +31,7 @@ export default function AdminDashboard() {
 
     const fetchStats = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/admin/dashboard');
+            const res = await fetch('/api/admin/dashboard');
             const data = await res.json();
             setStats(data);
         } catch (err) { console.error(err); }
@@ -39,7 +39,7 @@ export default function AdminDashboard() {
 
     const fetchMembers = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/admin/members');
+            const res = await fetch('/api/admin/members');
             const data = await res.json();
             setMembers(data);
         } catch (err) { console.error(err); }
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
     const fetchContacts = async () => {
         try {
             console.log('Fetching contacts from API...');
-            const res = await fetch('http://localhost:5000/api/admin/contacts');
+            const res = await fetch('/api/admin/contacts');
             console.log('Contacts response status:', res.status);
             const data = await res.json();
             console.log('Contacts data received:', data);
@@ -66,7 +66,7 @@ export default function AdminDashboard() {
     const handleDelete = async (id) => {
         if (!confirm('Are you sure you want to delete this member?')) return;
         try {
-            await fetch(`http://localhost:5000/api/admin/members/${id}`, { method: 'DELETE' });
+            await fetch(`/api/admin/members/${id}`, { method: 'DELETE' });
             fetchStats();
             fetchMembers();
         } catch (err) { console.error(err); }
@@ -102,7 +102,7 @@ export default function AdminDashboard() {
     const handleDeleteContact = async (id) => {
         if (!confirm('Are you sure you want to delete this message?')) return;
         try {
-            await fetch(`http://localhost:5000/api/admin/contacts/${id}`, { method: 'DELETE' });
+            await fetch(`/api/admin/contacts/${id}`, { method: 'DELETE' });
             fetchContacts();
         } catch (err) { console.error(err); }
     };

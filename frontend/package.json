@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "mongoose": "^9.2.2",
     "next": "16.1.6",
     "qrcode.react": "^4.2.0",
     "react": "19.2.3",
