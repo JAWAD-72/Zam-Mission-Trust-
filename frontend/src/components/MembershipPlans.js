@@ -121,8 +121,17 @@ export default function MembershipPlans() {
 
   // UPI Configuration
   const upiId = "327527012449695@cnrb";
+  const payeeName = encodeURIComponent('Anjuman Bagh e Zehra');
+  const txNote = encodeURIComponent('Membership Payment');
   const payAmount = selectedPlan ? (selectedPlan.name === 'SADQA' ? formData.customAmount : selectedPlan.price) : '0';
-  const upiUrl = `upi://pay?pa=${upiId}&pn=Anjuman&am=${payAmount}&cu=INR`;
+  const amountParam = parseFloat(payAmount || 0).toFixed(2);
+
+  // Base UPI URL with all required params
+  const upiBase = `pa=${upiId}&pn=${payeeName}&am=${amountParam}&cu=INR&tn=${txNote}&mc=0000`;
+  const upiUrl = `upi://pay?${upiBase}`;
+  const gpayUrl = `tez://upi/pay?${upiBase}`;
+  const phonepeUrl = `phonepe://pay?${upiBase}`;
+  const paytmUrl = `paytmmp://pay?${upiBase}`;
 
   return (
     <section id="membership-section" className="membership-section py-24">
@@ -198,9 +207,9 @@ export default function MembershipPlans() {
                   </p>
 
                   <div className="quick-pay-options grid grid-cols-2 gap-3 mb-6">
-                    <a href={upiUrl} className="btn-app gpay">Google Pay</a>
-                    <a href={upiUrl} className="btn-app paytm">Paytm</a>
-                    <a href={upiUrl} className="btn-app phonepe">PhonePe</a>
+                    <a href={gpayUrl} className="btn-app gpay">Google Pay</a>
+                    <a href={paytmUrl} className="btn-app paytm">Paytm</a>
+                    <a href={phonepeUrl} className="btn-app phonepe">PhonePe</a>
                     <a href={upiUrl} className="btn-app upi">Other UPI</a>
                   </div>
 
