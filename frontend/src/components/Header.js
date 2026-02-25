@@ -1,8 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="container flex items-center justify-between">
@@ -10,7 +13,16 @@ export default function Header() {
           <span className="logo-white">ANJUMAN BAG-E-</span>
           <span className="logo-yellow">ZEHRA</span>
         </div>
-        <nav className="flex items-center">
+
+        {/* Hamburger Button */}
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <span className={`bar ${menuOpen ? 'open1' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'open2' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'open3' : ''}`}></span>
+        </button>
+
+        {/* Desktop Nav */}
+        <nav className="nav-desktop flex items-center">
           <Link href="/" className="nav-link">Home</Link>
           <Link href="/about" className="nav-link">About</Link>
           <Link href="/membership" className="nav-link">Membership</Link>
@@ -20,39 +32,93 @@ export default function Header() {
           </Link>
         </nav>
       </div>
+
+      {/* Mobile Nav Dropdown */}
+      {menuOpen && (
+        <nav className="nav-mobile">
+          <Link href="/" className="mob-link" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="/about" className="mob-link" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link href="/membership" className="mob-link" onClick={() => setMenuOpen(false)}>Membership</Link>
+          <Link href="/contact" className="mob-link" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/admin/login" className="mob-link" onClick={() => setMenuOpen(false)}>Admin Login</Link>
+        </nav>
+      )}
+
       <style jsx>{`
         .header {
-          padding: 1.5rem 0;
-          position: absolute;
+          padding: 1.2rem 0;
+          position: fixed;
           width: 100%;
           top: 0;
-          z-index: 50;
-          background: transparent;
+          z-index: 100;
+          background: rgba(0,0,0,0.85);
+          backdrop-filter: blur(8px);
+          border-bottom: 1px solid #1a1a1a;
         }
         .logo {
-          font-size: 1.1rem;
+          font-size: 1rem;
           letter-spacing: 2px;
           font-weight: 700;
           font-family: 'Cinzel', serif;
         }
-        .logo-white {
-          color: #ffffff;
-        }
-        .logo-yellow {
-          color: var(--primary);
-        }
-        /* Global styles handle .nav-link, but we ensure specificity here if needed or inherit */
+        .logo-white { color: #ffffff; }
+        .logo-yellow { color: var(--primary); }
+
         :global(.nav-link) {
           color: #cccccc;
           margin-right: 2rem;
           font-size: 0.9rem;
           font-family: 'Inter', sans-serif;
           transition: color 0.3s;
-          text-transform: capitalize;
           text-decoration: none;
         }
-        :global(.nav-link:hover) {
-          color: var(--primary);
+        :global(.nav-link:hover) { color: var(--primary); }
+
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 4px;
+        }
+        .bar {
+          display: block;
+          width: 24px;
+          height: 2px;
+          background: #d4af37;
+          transition: all 0.3s;
+        }
+        .open1 { transform: rotate(45deg) translate(5px, 5px); }
+        .open2 { opacity: 0; }
+        .open3 { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .nav-mobile {
+          display: flex;
+          flex-direction: column;
+          background: rgba(0,0,0,0.97);
+          border-top: 1px solid #222;
+          padding: 1rem 0;
+        }
+        :global(.mob-link) {
+          color: #ccc;
+          padding: 0.9rem 1.5rem;
+          font-family: 'Inter', sans-serif;
+          font-size: 1rem;
+          text-decoration: none;
+          border-bottom: 1px solid #111;
+          transition: color 0.2s, background 0.2s;
+        }
+        :global(.mob-link:hover) { color: #d4af37; background: #0a0a0a; }
+
+        @media (max-width: 768px) {
+          .nav-desktop { display: none; }
+          .hamburger { display: flex; }
+          .logo { font-size: 0.85rem; }
+        }
+        @media (min-width: 769px) {
+          .nav-mobile { display: none !important; }
         }
       `}</style>
     </header>

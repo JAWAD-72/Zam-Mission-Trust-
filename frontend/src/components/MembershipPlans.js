@@ -300,7 +300,7 @@ export default function MembershipPlans() {
           background-attachment: fixed;
           color: #fff; 
         }
-        .title { color: #d4af37; font-size: 3rem; font-family: 'Cinzel', serif; }
+        .title { color: #d4af37; font-size: clamp(1.8rem, 4vw, 3rem); font-family: 'Cinzel', serif; }
         .subtitle { color: #999; font-family: 'Inter', sans-serif; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
         .plan-card { border: 1px solid #1a1a1a; background: #050505; padding: 2rem; position: relative; transition: all 0.3s; display: flex; flex-direction: column; }
@@ -336,6 +336,12 @@ export default function MembershipPlans() {
             box-shadow: 0 0 50px rgba(212, 175, 55, 0.1);
             max-height: 90vh;
             overflow-y: auto;
+        }
+        @media (max-width: 768px) {
+          .modal-overlay { align-items: flex-end; }
+          .modal-content { max-width: 100%; border-radius: 16px 16px 0 0; padding: 2rem 1.2rem; max-height: 85vh; }
+          .grid { grid-template-columns: 1fr !important; }
+          .plan-card.popular { transform: scale(1); }
         }
         .close-btn {
             position: absolute; top: 1rem; right: 1rem;

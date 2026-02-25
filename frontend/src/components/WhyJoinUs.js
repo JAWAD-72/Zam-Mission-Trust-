@@ -50,7 +50,7 @@ export default function WhyJoinUs() {
         <section className="py-24 why-join-section">
             <div className="container">
                 <div className="text-center mb-12">
-                    <h2 style={{ fontSize: '3rem', marginBottom: '1rem', letterSpacing: '1px' }}>WHY JOIN US</h2>
+                    <h2 className="section-heading" style={{ marginBottom: '1rem', letterSpacing: '1px' }}>WHY JOIN US</h2>
                     <p style={{ color: '#888', maxWidth: '600px', margin: '0 auto', fontFamily: 'Inter, sans-serif' }}>
                         Be part of a blessed community dedicated to faith and service
                     </p>
@@ -66,12 +66,17 @@ export default function WhyJoinUs() {
           background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url('/images/shrine1.jpg');
           background-size: cover;
           background-position: center;
-          background-attachment: fixed;
+        }
+        .section-heading {
+          font-size: clamp(1.8rem, 4vw, 3rem);
         }
         .grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
           gap: 2rem;
+        }
+        @media (max-width: 480px) {
+          .grid { grid-template-columns: 1fr; }
         }
       `}</style>
         </section>

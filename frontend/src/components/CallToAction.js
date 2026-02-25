@@ -21,21 +21,22 @@ export default function CallToAction() {
       <style jsx>{`
         .cta-section {
           background: linear-gradient(180deg, #000000 0%, #050505 100%);
+          padding: 5rem 1.5rem;
         }
         .title {
-          font-size: 3rem;
+          font-size: clamp(1.5rem, 4vw, 3rem);
           line-height: 1.2;
           color: var(--primary);
           letter-spacing: 1px;
+          margin-bottom: 1.2rem;
         }
-        .description {
+        .subtitle {
           max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
+          margin: 0 auto 2rem;
           color: #999;
           font-family: 'Inter', sans-serif;
           line-height: 1.7;
-          margin-bottom: 3rem;
+          font-size: clamp(0.9rem, 2vw, 1rem);
         }
       `}</style>
     </section>
