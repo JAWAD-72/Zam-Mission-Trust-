@@ -127,12 +127,16 @@ export default function MembershipPlans() {
   const upiId = "327527012449695@cnrb";
   const payeeName = encodeURIComponent('ZAM MISSION TRUST');
   const txNote = encodeURIComponent('Membership Payment');
-  const payAmount = selectedPlan ? (selectedPlan.name === 'SADQA' ? formData.customAmount : selectedPlan.price) : '0';
+  const payAmount = selectedPlan ? (selectedPlan.price === 'Variable' ? formData.customAmount : selectedPlan.price) : '0';
   const amountParam = parseFloat(payAmount || 0).toFixed(2);
   const transactionRef = 'TXN' + Date.now();
 
-  // UPI URL with tr (transaction ref) — no mc param
-  const upiUrl = `upi://pay?pa=${upiId}&pn=${payeeName}&am=${amountParam}&cu=INR&tn=${txNote}&tr=${transactionRef}`;
+  // App-specific UPI URLs (Removed 'tr' as it causes failures for non-merchant personal UPI IDs)
+  const baseUpiParams = `pa=${upiId}&pn=${payeeName}&am=${amountParam}&cu=INR&tn=${txNote}`;
+  const upiUrl = `upi://pay?${baseUpiParams}`;
+  const gpayUrl = `tez://upi/pay?${baseUpiParams}`;
+  const paytmUrl = `paytmmp://pay?${baseUpiParams}`;
+  const phonepeUrl = `phonepe://pay?${baseUpiParams}`;
 
   return (
     <section id="membership-section" className="membership-section">
@@ -340,9 +344,9 @@ export default function MembershipPlans() {
                   </div>
                   <p className="text-center text-xs text-gray-500 mb-6">Scan with any UPI App (GPay, Paytm, PhonePe)</p>
                   <div className="quick-pay-options grid grid-cols-2 gap-3 mb-6">
-                    <a href={upiUrl} className="btn-app gpay">Google Pay</a>
-                    <a href={upiUrl} className="btn-app paytm">Paytm</a>
-                    <a href={upiUrl} className="btn-app phonepe">PhonePe</a>
+                    <a href={gpayUrl} className="btn-app gpay">Google Pay</a>
+                    <a href={paytmUrl} className="btn-app paytm">Paytm</a>
+                    <a href={phonepeUrl} className="btn-app phonepe">PhonePe</a>
                     <a href={upiUrl} className="btn-app upi">Other UPI</a>
                   </div>
                   <button onClick={handleSubmit} className="btn btn-primary w-full mb-3" disabled={status === 'loading'}>
