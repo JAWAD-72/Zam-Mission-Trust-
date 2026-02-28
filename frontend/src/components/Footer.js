@@ -56,11 +56,13 @@ export default function Footer() {
           </div>
         </div>
         <div className="copyright">
-          &copy; {new Date().getFullYear()} Anjuman-e-Bagh-e-Zehra. All rights reserved.
+          <p className="trust-name">ZAM MISSION CHARITABLE TRUST</p>
+          <p className="trust-sub">Religious programs organized in collaboration with Anjuman Baug-e-Zehra.</p>
+          <p className="trust-copy">&copy; {new Date().getFullYear()} ZAM Mission Charitable Trust. All Rights Reserved.</p>
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx>{` 
         .footer {
           border-top: 1px solid #111;
           background: #000;
@@ -126,10 +128,25 @@ export default function Footer() {
         .copyright {
           border-top: 1px solid #111;
           padding-top: 1.5rem;
-          font-size: 0.82rem;
-          color: #444;
-          font-family: 'Inter', sans-serif;
           text-align: center;
+        }
+        .trust-name {
+          font-family: 'Cinzel', serif;
+          font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+          color: #d4af37;
+          letter-spacing: 3px;
+          margin-bottom: 0.4rem;
+        }
+        .trust-sub {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.78rem;
+          color: #555;
+          margin-bottom: 0.6rem;
+        }
+        .trust-copy {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.72rem;
+          color: #333;
         }
         @media (max-width: 768px) {
           .grid { grid-template-columns: 1fr; gap: 2rem; }

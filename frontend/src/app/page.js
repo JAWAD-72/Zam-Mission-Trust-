@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import WhyJoinUs from '@/components/WhyJoinUs';
 import CallToAction from '@/components/CallToAction';
+import TransparencySection from '@/components/TransparencySection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -9,8 +9,8 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <WhyJoinUs />
       <CallToAction />
+      <TransparencySection />
       <Footer />
     </main>
   );

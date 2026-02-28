@@ -151,7 +151,7 @@ export default function ContactSection() {
 
       <style jsx>{`
         .contact-section {
-          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/shrine2.jpg');
+          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/zari1.jpg');
           background-size: cover;
           background-position: center;
           background-attachment: fixed;

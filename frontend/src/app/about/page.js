@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import AboutSection from '@/components/AboutSection';
+import TransparencySection from '@/components/TransparencySection';
 import Footer from '@/components/Footer';
 
 export default function About() {
@@ -10,6 +11,7 @@ export default function About() {
             <div style={{ paddingTop: '80px', backgroundColor: '#000' }}>
                 <AboutSection />
             </div>
+            <TransparencySection />
             <Footer />
         </main>
     );

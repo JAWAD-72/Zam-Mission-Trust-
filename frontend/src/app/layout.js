@@ -2,7 +2,7 @@ import './globals.css';
 import BackgroundMusic from '@/components/BackgroundMusic';
 
 export const metadata = {
-  title: 'Anjuman-e-Bagh-e-Zehra | Community Membership',
+  title: 'ZAM MISSION TRUST',
   description: 'Join our blessed community in supporting religious activities and charitable works',
 };
 

@@ -12,11 +12,14 @@ export default function Hero() {
         <div className="pill mb-6">YA ZAHRA (SA)</div>
         <h1 className="title mb-6">ZAM MISSION CHARITABLE TRUST</h1>
         <p className="description mb-12">
-          Join our blessed community in supporting religious activities, charitable works, and spiritual gatherings. Your monthly contribution helps us serve the faith and community with dignity and devotion.
+          Supporting Faith. Serving Humanity. Empowering Communities.
+        </p>
+        <p className="description mb-12">
+          Zam Mission Charitable Trust is dedicated to social welfare and community development. Through housing support, healthcare assistance, education programs, employment initiatives, and religious services, we strive to uplift individuals and strengthen families with dignity and compassion.
         </p>
         <div className="buttons">
-          <button className="btn btn-primary" onClick={goToMembership}>BECOME A MEMBER</button>
-          <button className="btn btn-outline" onClick={goToMembership}>LEARN MORE</button>
+          <button className="btn btn-primary" onClick={goToMembership}>BECOME A SUPPORTER</button>
+
         </div>
       </div>
 

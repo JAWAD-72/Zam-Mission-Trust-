@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import MembershipPlans from '@/components/MembershipPlans';
+import TransparencySection from '@/components/TransparencySection';
 import Footer from '@/components/Footer';
 
 export default function Membership() {
@@ -9,6 +10,7 @@ export default function Membership() {
             <div style={{ paddingTop: '80px', backgroundColor: '#000' }}>
                 <MembershipPlans />
             </div>
+            <TransparencySection />
             <Footer />
         </main>
     );

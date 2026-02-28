@@ -12,11 +12,11 @@ export default function CallToAction() {
   return (
     <section className="cta-section py-24">
       <div className="container text-center">
-        <h2 className="title mb-6">READY TO MAKE A DIFFERENCE?</h2>
+        <h2 className="title mb-6">Join Us in Serving Humanity</h2>
         <p className="subtitle mb-8">
-          Join hundreds of community members in supporting our noble cause
+          Your contribution helps provide housing, healthcare, education, and spiritual support to those in need. Together, we can build stronger communities rooted in compassion and responsibility.
         </p>
-        <button className="btn btn-primary" onClick={goToMembership}>VIEW MEMBERSHIP PLANS</button>
+        <button className="btn btn-primary" onClick={goToMembership}>Support Plans</button>
       </div>
       <style jsx>{`
         .cta-section {

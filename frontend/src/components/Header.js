@@ -10,8 +10,11 @@ export default function Header() {
     <header className="header">
       <div className="container flex items-center justify-between">
         <div className="logo">
-          <span className="logo-white">ANJUMAN BAUG-E-</span>
-          <span className="logo-yellow">ZEHRA</span>
+          <div className="logo-main">
+            <span className="logo-white">ZAM MISSION </span>
+            <span className="logo-yellow">CHARITABLE TRUST</span>
+          </div>
+          <p className="logo-collab">In Collaboration with Anjuman Baug-e-Zehra</p>
         </div>
 
         {/* Hamburger Button */}
@@ -27,8 +30,9 @@ export default function Header() {
           <Link href="/about" className="nav-link">About</Link>
           <Link href="/membership" className="nav-link">Membership</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
+          <Link href="/policy" className="nav-link">Privacy & Policy</Link>
           <Link href="/admin/login">
-            <button className="btn btn-primary" style={{ padding: '0.6rem 1.8rem', fontSize: '0.8rem' }}>LOGIN</button>
+            <button className="btn btn-outline" style={{ padding: '0.6rem 1.8rem', fontSize: '0.8rem', border: '1px solid #d4af37', color: '#d4af37', background: 'transparent' }}>LOGIN</button>
           </Link>
         </nav>
       </div>
@@ -40,6 +44,7 @@ export default function Header() {
           <Link href="/about" className="mob-link" onClick={() => setMenuOpen(false)}>About</Link>
           <Link href="/membership" className="mob-link" onClick={() => setMenuOpen(false)}>Membership</Link>
           <Link href="/contact" className="mob-link" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/policy" className="mob-link" onClick={() => setMenuOpen(false)}>Privacy & Policy</Link>
           <Link href="/admin/login" className="mob-link" onClick={() => setMenuOpen(false)}>Admin Login</Link>
         </nav>
       )}
@@ -56,10 +61,24 @@ export default function Header() {
           border-bottom: 1px solid #1a1a1a;
         }
         .logo {
-          font-size: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+        }
+        .logo-main {
+          font-size: 1.05rem;
           letter-spacing: 2px;
           font-weight: 700;
           font-family: 'Cinzel', serif;
+          line-height: 1.2;
+        }
+        .logo-collab {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.62rem;
+          color: #666;
+          letter-spacing: 1px;
+          margin: 0;
+          font-weight: 400;
         }
         .logo-white { color: #ffffff; }
         .logo-yellow { color: var(--primary); }
